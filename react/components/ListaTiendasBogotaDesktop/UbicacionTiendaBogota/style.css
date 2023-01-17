@@ -1,0 +1,147 @@
+.desktop__ubicacion-bogota--contenedor-general {
+    cursor: pointer;
+}
+
+.desktop__ubicacion-bogota--header {
+    display      : flex;
+    padding      : 12px 0px;
+    border-top   : var(--table-line-border);
+    border-bottom: var(--table-line-border);
+}
+
+.desktop__ubicacion-bogota--header-imagen {
+    display    : flex;
+    align-items: center;
+    width      : 3%;
+}
+
+.desktop__ubicacion-bogota--header-imagen img {
+    width: 50%;
+}
+
+.desktop__ubicacion-bogota--header-titulo {
+    width: 95%;
+}
+
+.desktop__ubicacion-bogota--header-titulo h3 {
+    margin     : 0px;
+    font-family: var(--font-lato);
+    font-size  : 17.6px;
+    font-weight: 400;
+    color      : var(--table-text-color);
+}
+
+.desktop__ubicacion-bogota--header-titulo .lista-abierta {
+    font-weight: 600;
+}
+
+.desktop__ubicacion-bogota--tabla {
+    display        : none;
+    width          : 100%;
+    margin-top     : 15px;
+    margin-bottom  : 30px;
+    border-collapse: collapse;
+}
+
+.ubicacion-bogota__tabla--visible {
+    display: table;
+}
+
+.ubicacion-bogota__tabla--transition-enter {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.ubicacion-bogota__tabla--transition-enter-active {
+    opacity   : 1;
+    transform: translateY(0px);
+    transition: all 200ms;
+}
+
+.ubicacion-bogota__tabla--transition-enter-done {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.ubicacion-bogota__tabla--transition-exit {
+    display: table;
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.ubicacion-bogota__tabla--transition-exit-active {
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: all 200ms;
+}
+
+.ubicacion-bogota__tabla--transition-exit-done {
+    display: none;
+    opacity: 0;
+}
+
+.desktop__ubicacion-bogota--tabla-titulo {
+    font-family: var(--font-lato);
+    font-size  : 16px;
+    font-weight: 700;
+    color      : var(--table-text-color);
+    text-align : start;
+    padding    : 3px 25px;
+}
+
+.tabla-tienda {
+    width: 22%;
+}
+
+.tabla-direccion {
+    width: 35%;
+}
+
+.tabla-telefono {
+    width: 28%;
+}
+
+.tabla-blanco {
+    width: 15%;
+}
+
+.desktop__ubicacion-bogota--tabla-row {
+    font-family  : var(--font-lato);
+    font-size    : 15px;
+    color        : var(--table-text-color);
+    padding      : 10px 22px 3px;
+    border-top   : var(--table-line-border);
+    border-bottom: var(--table-line-border);
+}
+
+.cell-border {
+    border: var(--table-line-border);
+}
+
+.button-cell {
+    position: relative;
+}
+
+.ubicacion-bogota__tabla-row--button {
+    position        : absolute;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-35%, -50%);
+    width           : 55%;
+    height          : 58%;
+    font-family     : var(--font-lato);
+    font-size       : 8px;
+    font-weight     : 700;
+    color           : #ffffff;
+    border          : var(--table-line-border);
+    background-color: var(--panamericana-color);
+    cursor          : pointer;
+}
+
+.ubicacion-bogota__tabla-row--button::first-letter {
+    font-size: 12px;
+}
+
+.ubicacion-bogota__tabla-row--button:hover {
+    background-color: #FF8553;
+}

@@ -1,0 +1,9 @@
+:root {
+  --font-lato: 'Lato', sans-serif;
+  --line-border: solid 1px rgb(1, 2, 3, 0.56);
+  --panamericana-color: #FE4C03;
+  --panamericana-color-mobile: #E96611;
+  --table-text-color: #4F4A4A;
+  --text-color-mobile: #686868;
+  --table-line-border: solid 1px rgb(112, 112, 112, 0.4);
+}

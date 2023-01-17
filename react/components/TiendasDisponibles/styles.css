@@ -1,0 +1,96 @@
+/* CELULAR */
+.selector-contenedor-general {
+  width   : 100%;
+  position: relative;
+}
+
+.selector-tienda {
+  position          : relative;
+  width             : 100%;
+  padding           : 15px;
+  font-family       : var(--font-lato);
+  font-size         : 18px;
+  color             : var(--text-color-mobile);
+  background        : transparent;
+  border            : solid 1px black;
+  -webkit-appearance: none;
+  -moz-appearance   : none;
+  appearance        : none;
+  z-index           : 20;
+}
+
+.selector-down-arrow {
+  box-sizing     : border-box;
+  position       : absolute;
+  top            : 0;
+  right          : 0;
+  display        : flex;
+  justify-content: center;
+  width          : 25%;
+  height         : 100%;
+  padding        : 16px 5px;
+  z-index        : 10;
+}
+
+/* DESKTOP-TABLET */
+
+.desktop__lista-tiendas {
+  display       : flex;
+  flex-direction: column;
+  width         : 100%;
+  height        : 100%;
+}
+
+.desktop__lista-tiendas--header {
+  width        : 100%;
+  height       : 15%;
+  margin-bottom: 40px;
+}
+
+.desktop__lista-tiendas--header-titulo {
+  box-sizing    : border-box;
+  width         : 100%;
+  margin        : 0px;
+  padding       : 5px;
+  font-family   : 'Lato', sans-serif;
+  font-size     : 30px;
+  font-weight   : 900;
+  text-align    : center;
+  text-transform: uppercase;
+  color         : var(--panamericana-color);
+  border-bottom : solid 1px rgb(1, 2, 3, 0.4);
+}
+
+.desktop__lista-tiendas--header-descripcion {
+  box-sizing : border-box;
+  width      : 100%;
+  padding    : 5px;
+  font-family: 'Lato', sans-serif;
+  font-size  : 20px;
+  color      : rgb(79, 74, 74, 1);
+  text-align : center;
+}
+
+
+@media screen and (min-width: 425px) {
+  .selector-tienda {
+    padding  : 15px 30px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 590px) {
+  .selector-tienda {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .desktop__lista-tiendas--header-titulo {
+    font-size: 40px;
+  }
+
+  .desktop__lista-tiendas--header-descripcion {
+    font-size: 25px;
+  }
+}

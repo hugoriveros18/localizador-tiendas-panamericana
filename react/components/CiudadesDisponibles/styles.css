@@ -1,0 +1,87 @@
+/* CELULAR */
+.selector-contenedor-general {
+    width   : 100%;
+    position: relative;
+}
+
+.selector-ciudades {
+    position          : relative;
+    width             : 100%;
+    padding           : 15px;
+    font-family       : var(--font-lato);
+    font-size         : 18px;
+    color             : var(--text-color-mobile);
+    background        : transparent;
+    border            : solid 1px black;
+    -webkit-appearance: none;
+    -moz-appearance   : none;
+    appearance        : none;
+    z-index           : 20;
+}
+
+.selector-down-arrow {
+    box-sizing     : border-box;
+    position       : absolute;
+    top            : 0;
+    right          : 0;
+    display        : flex;
+    justify-content: center;
+    width          : 25%;
+    height         : 100%;
+    padding        : 16px 5px;
+    z-index        : 10;
+}
+
+
+/* DESKTOP-TABLET */
+.desktop__lista-ciudades {
+    width : 100%;
+    height: 100%;
+}
+
+.desktop__lista-ciudades--table {
+    width          : 100%;
+    height         : 100%;
+    border-collapse: collapse;
+}
+
+.desktop__lista-ciudades--table-row {
+    font-family  : var(--font-lato);
+    font-size    : 18px;
+    font-weight  : 700;
+    text-align   : center;
+    color        : rgb(1, 2, 3, 0.56);
+    border-top   : var(--line-border);
+    border-bottom: var(--line-border);
+    cursor       : pointer;
+}
+
+.desktop__lista-ciudades--table-row:hover {
+    background-color: #FF8553;
+    color           : #ffffff;
+}
+
+.ciudad-seleccionada {
+    font-size       : 18px;
+    color           : #ffffff;
+    background-color: var(--panamericana-color);
+    text-transform  : uppercase;
+}
+
+.ciudad-seleccionada:hover {
+    color           : #ffffff;
+    background-color: var(--panamericana-color);
+}
+
+@media screen and (min-width: 425px) {
+    .selector-ciudades {
+        padding  : 15px 30px;
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 590px) {
+    .selector-ciudades {
+        font-size: 20px;
+    }
+}

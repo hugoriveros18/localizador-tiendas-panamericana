@@ -1,0 +1,6 @@
+{
+  "localizador-tiendas": {
+    "component": "LocalizadorTiendasPanamericana",
+    "render": "client"
+  }
+}
