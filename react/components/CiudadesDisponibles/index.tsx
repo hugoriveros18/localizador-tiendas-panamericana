@@ -21,9 +21,8 @@ const CiudadesDisponibles = () => {
   //EFECTOS
   useEffect(() => {
     if(estadoGlobal?.ciudadSeleccionada !== '') {
-      console.log(estadoGlobal?.ciudadSeleccionada)
       fetch(
-        `/api/dataentities/LT/search?_fields=ciudad,nombre,direccion,horarioLunesViernes,horarioSabado,horarioDomingoFestivo,PBX,lineaDirecta,domicilios,parqueadero,imagenTienda,linkGoogleMaps,linkWaze,ubicacionGeografica&_where=ciudad=${estadoGlobal?.ciudadSeleccionada.replace(" ","")}`,
+        `/api/dataentities/LP/search?_fields=ciudad,nombre,direccion,horarioLunesViernes,horarioSabado,horarioDomingoFestivo,PBX,lineaDirecta,domicilios,parqueadero,imagenTienda,linkGoogleMaps,linkWaze,ubicacionGeografica&_where=ciudad=${estadoGlobal?.ciudadSeleccionada.replace(" ","")}`,
         {
             headers: {
                 "Content-Type": "application/json",

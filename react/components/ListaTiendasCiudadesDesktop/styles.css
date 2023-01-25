@@ -1,115 +1,122 @@
 .desktop__tiendas-ciudad--contenedor-general {
-    box-sizing    : border-box;
-    display       : flex;
-    flex-direction: column;
-    gap           : 20px;
-    width         : 100%;
-    height        : 85%;
-    padding       : 0px 80px;
-    overflow      : auto;
+  box-sizing    : border-box;
+  display       : flex;
+  flex-direction: column;
+  gap           : 20px;
+  width         : 100%;
+  height        : 85%;
+  padding       : 0px 80px;
+  overflow      : auto;
 }
 
 .tiendas-ciudad__informacion-general--contenedor {
-    box-sizing      : border-box;
-    display         : flex;
-    gap             : 20px;
-    width           : 100%;
-    min-height      : 300px;
-    padding         : 35px 30px;
-    background-color: #F6F5F2;
-    border-radius   : 20px;
+  box-sizing      : border-box;
+  display         : flex;
+  gap             : 20px;
+  width           : 100%;
+  min-height      : 300px;
+  padding         : 35px 30px;
+  background-color: #f5f5f5;
+  border-radius   : 20px;
 }
 
 .tiendas-ciudad__informacion-general,
 .tiendas-ciudad__contenedor-imagen {
-    width: 50%;
+  width: 50%;
 }
 
 .tiendas-ciudad__informacion-general h3 {
-    box-sizing    : border-box;
-    width         : 100%;
-    margin        : 0px;
-    margin-bottom : 20px;
-    padding-left  : 15px;
-    font-family   : var(--font-lato);
-    font-size     : 25px;
-    font-weight   : 900;
-    text-align    : start;
-    text-transform: uppercase;
-    color         : var(--panamericana-color);
+  box-sizing    : border-box;
+  width         : 100%;
+  margin        : 0px;
+  margin-bottom : 20px;
+  padding-left  : 15px;
+  font-family   : var(--font-lato);
+  font-size     : 25px;
+  font-weight   : 900;
+  text-align    : start;
+  text-transform: uppercase;
+  color         : var(--panamericana-color);
 }
 
 .tiendas-ciudad__informacion-general p {
-    margin-top  : 10px;
-    padding-left: 25px;
-    font-family : var(--font-lato);
-    font-size   : 20px;
-    color       : #686b72;
+  margin-top  : 10px;
+  padding-left: 25px;
+  font-family : var(--font-lato);
+  font-size   : 20px;
+  color       : #686b72;
 }
 
 .tiendas-ciudad__contenedor-imagen img {
-    width: 100%;
-    max-height: 100%;
+  width     : 100%;
+  max-height: 100%;
 }
 
 .tiendas-ciudad__informacion-botones {
-    box-sizing: border-box;
-    display   : flex;
-    gap       : 5px;
-    width     : 100%;
-    margin-top: 30px;
-    padding   : 0px 55px 0px 25px;
+  box-sizing: border-box;
+  display   : flex;
+  gap       : 5px;
+  width     : 85%;
+  margin-top: 20px;
+  padding   : 0px 55px 0px 25px;
 }
 
 .tiendas-ciudad__informacion-botones--google-maps,
 .tiendas-ciudad__informacion-botones--ver-mas {
-    box-sizing: border-box;
-    width     : 50%;
-    padding   : 3px 14px 0px;
-    border    : var(--table-line-border);
-    cursor    : pointer;
+  box-sizing: border-box;
+  width     : 50%;
+  padding   : 3px 14px 0px;
+  border    : var(--table-line-border);
+  cursor    : pointer;
 }
 
 .tiendas-ciudad__informacion-botones--google-maps img {
-    width: 100%;
+  width: 100%;
 }
 
 .tiendas-ciudad__informacion-botones--ver-mas {
-    font-family     : var(--font-lato);
-    font-size       : 11px;
-    font-weight     : 700;
-    color           : var(--panamericana-color);
-    background-color: transparent;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  font-family     : var(--font-lato);
+  font-size       : 12px;
+  font-weight     : 700;
+  color           : #fff;
+  background-color: var(--panamericana-color);
 }
 
 .tiendas-ciudad__informacion-botones--ver-mas::first-letter {
-    font-size: 16px;
+  font-size: 16px;
 }
 
-.tiendas-ciudad__informacion-botones--google-maps:hover,
-.tiendas-ciudad__informacion-botones--ver-mas:hover  {
-    border: solid 1px var(--panamericana-color);
+.tiendas-ciudad__informacion-botones--google-maps:hover {
+  border: solid 1px var(--panamericana-color);
+}
+
+.tiendas-ciudad__informacion-botones--ver-mas:hover {
+  background-color: #FF8553;
 }
 
 
 
 @media screen and (max-width: 1280px) {
-    .desktop__tiendas-ciudad--contenedor-general {
-        padding       : 0px 35px;
-    }
+  .desktop__tiendas-ciudad--contenedor-general {
+    padding: 0px 35px;
+  }
 }
 
 @media screen and (max-width: 1440px) {
-    .tiendas-ciudad__informacion-general p {
-        font-size   : 17px;
-    }
-    .tiendas-ciudad__informacion-general--contenedor {
-        min-height      : auto;
-    }
+  .tiendas-ciudad__informacion-general p {
+    font-size: 17px;
+  }
+
+  .tiendas-ciudad__informacion-general--contenedor {
+    min-height: auto;
+  }
 }
 
 @media screen and (max-width: 1180px) {
-    .tiendas-ciudad__informacion-general p {
-        font-size   : 14px;
-    }
+  .tiendas-ciudad__informacion-general p {
+    font-size: 14px;
+  }
 }

@@ -140,6 +140,10 @@
   color           : var(--panamericana-color);
 }
 
+.tienda-seleccionada__close-button {
+  display: none;
+}
+
 @media screen and (min-width: 425px) {
   .tienda-seleccionada__informacion-general--imagen {
     box-sizing: border-box;
@@ -182,7 +186,7 @@
 }
 
 
-/* DESKTOP-TABLET */
+/* DESKTOP */
 
 @media screen and (min-width: 1026px) {
   .tienda-seleccionada__detalles-generales--datos p {
@@ -265,9 +269,7 @@
   .tienda-seleccionada__detalles-generales {
     margin: 10px 0px 30px;
   }
-}
 
-@media screen and (min-width: 1026px) {
   .tienda-seleccionada__contenedor-general {
     display: block;
     padding: 0px 20px;
@@ -284,6 +286,26 @@
     width    : 55%;
     max-width: none;
     padding  : 0px 20px;
+  }
+
+  .tienda-seleccionada__close-button {
+    display : block;
+    position: absolute;
+    left    : 25px;
+    top     : 25px;
+    width   : 50px;
+    height  : 50px;
+    padding : 4px;
+    border-radius: 50%;
+    cursor  : pointer;
+  }
+
+  .tienda-seleccionada__close-button:hover {
+    background-color: #dfdbdb;
+  }
+
+  .tienda-seleccionada__close-button img {
+    width: 100%;
   }
 }
 

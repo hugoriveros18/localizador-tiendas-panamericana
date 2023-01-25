@@ -39,6 +39,7 @@ const UbicacionTiendaBogota = ({ubicacionTienda}:UbicacionTiendaBogotaProps) => 
     }
     const seleccionarNuevaCiudad = (tienda:TiendaSeleccionada) => {
         estadoGlobal?.setTiendaSeleccionada(tienda);
+        window.scrollTo(0,0);
     }
 
     //JSX
@@ -85,7 +86,7 @@ const UbicacionTiendaBogota = ({ubicacionTienda}:UbicacionTiendaBogotaProps) => 
                                                 className={`${handles['ubicacion-bogota__tabla-row--button']}`}
                                                 onClick={() => seleccionarNuevaCiudad(tienda)}
                                             >
-                                                VER MAS <span>{'>'}</span>
+                                                VER MÁS <span>{'>'}</span>
                                             </button>
                                         </td>
                                     </tr>

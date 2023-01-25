@@ -18,6 +18,7 @@ const ListaTiendasCiudadesDesktop = () => {
   //METODOS
   const seleccionarNuevaTienda = (tienda: TiendaSeleccionada) => {
     estadoGlobal?.setTiendaSeleccionada(tienda);
+    window.scrollTo(0,0);
   }
 
   //JSX

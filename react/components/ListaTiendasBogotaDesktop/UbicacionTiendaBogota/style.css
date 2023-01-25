@@ -109,7 +109,7 @@
     font-family  : var(--font-lato);
     font-size    : 15px;
     color        : var(--table-text-color);
-    padding      : 10px 22px 3px;
+    padding      : 10px 22px 6px;
     border-top   : var(--table-line-border);
     border-bottom: var(--table-line-border);
 }
@@ -126,20 +126,16 @@
     position        : absolute;
     top             : 50%;
     left            : 50%;
-    transform       : translate(-35%, -50%);
-    width           : 55%;
-    height          : 58%;
+    transform       : translate(-50%, -50%);
+    width           : 65%;
+    height          : 65%;
     font-family     : var(--font-lato);
-    font-size       : 8px;
+    font-size       : 12px;
     font-weight     : 700;
     color           : #ffffff;
     border          : var(--table-line-border);
     background-color: var(--panamericana-color);
     cursor          : pointer;
-}
-
-.ubicacion-bogota__tabla-row--button::first-letter {
-    font-size: 12px;
 }
 
 .ubicacion-bogota__tabla-row--button:hover {
