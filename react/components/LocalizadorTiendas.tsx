@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import LocalizadorTiendasCelular from './LocalizadorTiendasCelular';
 import LocalizadorTiendasDesktop from './LocalizadorTiendasDesktop';
 import { useDevice } from 'vtex.device-detector';
 import './styles.css'
+import { Context } from './ContextoGlobal';
+import LocalizadorTiendasError from './LocalizadorTiendasError';
 
 const LocalizadorTiendas = () => {
 
+  //ESTADO GLOBAL
+  const estadoGlobal = useContext(Context);
+
   //DISPOSITIVO
   const { isMobile } = useDevice();
-  console.log(isMobile)
 
   //JSX
   if(isMobile) {
@@ -17,7 +21,13 @@ const LocalizadorTiendas = () => {
     );
   }
   return (
-    <LocalizadorTiendasDesktop/>
+    <>
+      {
+        estadoGlobal?.fetchError &&
+          <LocalizadorTiendasError/>
+      }
+      <LocalizadorTiendasDesktop/>
+    </>
   )
 }
 

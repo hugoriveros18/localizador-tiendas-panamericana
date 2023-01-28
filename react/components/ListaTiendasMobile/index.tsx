@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { Context } from "../ContextoGlobal";
 import GoogleMapsLogo from '../../assets/google-maps-logo.png';
 import WazeLogo from '../../assets/waze-logo.png';
@@ -15,10 +15,14 @@ const ListaTiendasMobile = () => {
   //CSS HANDLES
   const handles = useCssHandles(CSS_HANDLES);
 
-  //EFECTOS
-  useEffect(() => {
-    console.log(estadoGlobal?.verTodasLasTiendasMobile)
-  }, [estadoGlobal?.verTodasLasTiendasMobile])
+  //METODOS
+  const verMenosTiendas = () => {
+    estadoGlobal?.setVerTodasLasTiendasMobile(null);
+    window.scrollTo({
+      top: 25,
+      behavior: 'smooth'
+    });
+  }
 
   return (
     <>
@@ -60,12 +64,12 @@ const ListaTiendasMobile = () => {
                   </div>
                   <div className={`${handles['tienda-seleccionada__detalles-generales--datos']}`}>
                     <p>Dirección: {tienda.direccion}</p>
-                    <p>Teléfono: {numeroTelefonicoFormateado(tienda.PBX)}</p>
+                    <p>Teléfono: {numeroTelefonicoFormateado(tienda.PBX,tienda.indicativoCiudad)}{tienda.lineaDirecta ? ` - ${numeroTelefonicoFormateado(tienda.lineaDirecta,tienda.indicativoCiudad)}` : ''}</p>
                     {horarioFormateado()}
                     <p>Parqueadero: {tienda.parqueadero ? 'Sí' : 'No'}</p>
                     {
                       tienda.domicilios !== null &&
-                      <p>Domicilios: {numeroTelefonicoFormateado(tienda.domicilios)}</p>
+                      <p>Domicilios: {numeroTelefonicoFormateado(tienda.domicilios,tienda.indicativoCiudad)}</p>
                     }
                   </div>
                 </div>
@@ -80,7 +84,7 @@ const ListaTiendasMobile = () => {
           <div className={`${handles['tienda-seleccionada__ver-mas--contenedor-interno']}`}>
             <button
               className={`${handles['tienda-seleccionada__ver-mas--boton']}`}
-              onClick={() => estadoGlobal?.setVerTodasLasTiendasMobile(null)}
+              onClick={verMenosTiendas}
             >
               Ver menos
             </button>

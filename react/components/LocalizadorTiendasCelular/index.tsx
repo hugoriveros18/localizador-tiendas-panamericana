@@ -8,6 +8,7 @@ import { Context } from '../ContextoGlobal';
 import './styles.css';
 import { CSS_HANDLES } from '../cssHandles';
 import ListaTiendasMobile from '../ListaTiendasMobile';
+import LocalizadorTiendasError from '../LocalizadorTiendasError';
 
 const LocalizadorTiendasCelular = () => {
 
@@ -71,6 +72,10 @@ const LocalizadorTiendasCelular = () => {
                 </CSSTransition>
                 <TiendaSeleccionada/>
                 <ListaTiendasMobile/>
+                {
+                  estadoGlobal?.fetchError &&
+                    <LocalizadorTiendasError/>
+                }
             </div>
         </div>
     )

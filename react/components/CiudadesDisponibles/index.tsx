@@ -22,7 +22,7 @@ const CiudadesDisponibles = () => {
   useEffect(() => {
     if(estadoGlobal?.ciudadSeleccionada !== '') {
       fetch(
-        `/api/dataentities/LP/search?_fields=ciudad,nombre,direccion,horarioLunesViernes,horarioSabado,horarioDomingoFestivo,PBX,lineaDirecta,domicilios,parqueadero,imagenTienda,linkGoogleMaps,linkWaze,ubicacionGeografica&_where=ciudad=${estadoGlobal?.ciudadSeleccionada.replace(" ","")}`,
+        `/api/dataentities/LP/search?_fields=ciudad,nombre,direccion,horarioLunesViernes,horarioSabado,horarioDomingoFestivo,indicativoCiudad,PBX,lineaDirecta,domicilios,parqueadero,imagenTienda,linkGoogleMaps,linkWaze,ubicacionGeografica&_where=ciudad=${estadoGlobal?.ciudadSeleccionada.replace(" ","")}`,
         {
             headers: {
                 "Content-Type": "application/json",
@@ -32,10 +32,16 @@ const CiudadesDisponibles = () => {
         }
       )
       .then((res) => {
-        return res.json()
+        if(res.ok) {
+          return res.json()
+        }
+        throw new Error()
       })
       .then((res) => {
         estadoGlobal?.setListaTiendas(res);
+      })
+      .catch(() => {
+        estadoGlobal?.setFetchError(true)
       });
     }
   },[estadoGlobal?.ciudadSeleccionada,ciudadSeleccionadaLocal])
@@ -45,6 +51,9 @@ const CiudadesDisponibles = () => {
 
   //METHODS
   const seleccionarNuevaCiudad = (e:any) => {
+    if(e === estadoGlobal?.ciudadSeleccionada) {
+      return
+    }
     if(e.target === undefined) {
       estadoGlobal?.setCiudadSeleccionada(e);
     } else {

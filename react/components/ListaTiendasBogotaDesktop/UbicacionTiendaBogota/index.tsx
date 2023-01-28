@@ -7,6 +7,7 @@ import IconClose from '../../../assets/plus-icon.svg';
 import IconOpen from '../../../assets/minus-icon.svg';
 import './style.css'
 import { CSS_HANDLES } from '../../cssHandles';
+import { numeroTelefonicoBogotaFormateado } from '../../informacionGeneralLanding';
 
 const UbicacionTiendaBogota = ({ubicacionTienda}:UbicacionTiendaBogotaProps) => {
 
@@ -79,7 +80,7 @@ const UbicacionTiendaBogota = ({ubicacionTienda}:UbicacionTiendaBogotaProps) => 
                                         <td className={`${handles['desktop__ubicacion-bogota--tabla-row']}`}>{tienda.nombre}</td>
                                         <td className={`${handles['desktop__ubicacion-bogota--tabla-row']} ${handles['cell-border']}`}>{tienda.direccion}</td>
                                         <td className={`${handles['desktop__ubicacion-bogota--tabla-row']} ${handles['cell-border']}`}>
-                                            {tienda.PBX} {tienda.lineaDirecta !== null && tienda.lineaDirecta}
+                                            {numeroTelefonicoBogotaFormateado(tienda.PBX,tienda.indicativoCiudad)} {tienda.lineaDirecta !== null && ` - ${numeroTelefonicoBogotaFormateado(tienda.lineaDirecta,tienda.indicativoCiudad)}`}
                                         </td>
                                         <td className={`${handles['desktop__ubicacion-bogota--tabla-row']} ${handles['button-cell']}`}>
                                             <button

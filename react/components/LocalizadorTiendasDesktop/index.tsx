@@ -28,32 +28,32 @@ const LocalizadorTiendasDesktop = () => {
 
   //JSX
   return (
-      <div className={`${handles['desktop__localizador-tiendas']}`}>
-          <div
-              className={`
-                  ${handles['desktop__localizador-tiendas--contenedor-general']}
-                  ${estadoGlobal?.tiendaSeleccionada !== null && handles['desktop__localizador-tiendas--transition']}
-              `}
-          >
-              <div className={`${handles['desktop__localizador-tiendas--seccion-ciudades']}`}>
-                  <CiudadesDisponibles/>
-              </div>
-              <div className={`${handles['desktop__localizador-tiendas--seccion-tiendas']}`}>
-                  <TiendasDisponibles/>
-              </div>
+    <div className={`${handles['desktop__localizador-tiendas']}`}>
+      <div
+          className={`
+              ${handles['desktop__localizador-tiendas--contenedor-general']}
+              ${estadoGlobal?.tiendaSeleccionada !== null && handles['desktop__localizador-tiendas--transition']}
+          `}
+      >
+          <div className={`${handles['desktop__localizador-tiendas--seccion-ciudades']}`}>
+              <CiudadesDisponibles/>
           </div>
-          <div
-              className={`
-                  ${handles['desktop__localizador-tiendas--contenedor-seleccionada']}
-                  ${estadoGlobal?.tiendaSeleccionada !== null && handles['desktop__localizador-tiendas--transition']}
-              `}
-          >
-              <div className={`${handles['localizador-tiendas--seleccionada-ciudad']}`}>
-                  <p>TIENDAS EN {estadoGlobal?.ciudadSeleccionada}</p>
-              </div>
-              <TiendaSeleccionada/>
+          <div className={`${handles['desktop__localizador-tiendas--seccion-tiendas']}`}>
+              <TiendasDisponibles/>
           </div>
       </div>
+      <div
+          className={`
+              ${handles['desktop__localizador-tiendas--contenedor-seleccionada']}
+              ${estadoGlobal?.tiendaSeleccionada !== null && handles['desktop__localizador-tiendas--transition']}
+          `}
+      >
+          <div className={`${handles['localizador-tiendas--seleccionada-ciudad']}`}>
+              <p>TIENDAS EN {estadoGlobal?.ciudadSeleccionada}</p>
+          </div>
+          <TiendaSeleccionada/>
+      </div>
+    </div>
   )
 }
 

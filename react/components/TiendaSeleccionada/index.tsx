@@ -44,7 +44,7 @@ const TiendaSeleccionada = () => {
           <div
               className={`${handles['tienda-seleccionada__contenedor-general']}`}
           >
-            <div 
+            <div
               className={`${handles['tienda-seleccionada__close-button']}`}
               onClick={verTodosDesktop}
             >
@@ -80,12 +80,12 @@ const TiendaSeleccionada = () => {
                     </div>
                     <div className={`${handles['tienda-seleccionada__detalles-generales--datos']}`}>
                         <p>Dirección: {estadoGlobal?.tiendaSeleccionada?.direccion}</p>
-                        <p>Teléfono: {numeroTelefonicoFormateado(estadoGlobal?.tiendaSeleccionada?.PBX)}</p>
+                        <p>Teléfono: {numeroTelefonicoFormateado(estadoGlobal?.tiendaSeleccionada?.PBX,estadoGlobal?.tiendaSeleccionada?.indicativoCiudad)}{estadoGlobal?.tiendaSeleccionada?.lineaDirecta ? ` - ${numeroTelefonicoFormateado(estadoGlobal.tiendaSeleccionada.lineaDirecta,estadoGlobal?.tiendaSeleccionada?.indicativoCiudad)}` : ''}</p>
                         {horarioFormateado()}
                         <p>Parqueadero: {estadoGlobal?.tiendaSeleccionada?.parqueadero ? 'Sí' : 'No'}</p>
                         {
                           estadoGlobal?.tiendaSeleccionada?.domicilios !== null &&
-                            <p>Domicilios: {numeroTelefonicoFormateado(estadoGlobal?.tiendaSeleccionada?.domicilios)}</p>
+                            <p>Domicilios: {numeroTelefonicoFormateado(estadoGlobal?.tiendaSeleccionada?.domicilios, estadoGlobal?.tiendaSeleccionada?.indicativoCiudad)}</p>
                         }
                     </div>
                 </div>

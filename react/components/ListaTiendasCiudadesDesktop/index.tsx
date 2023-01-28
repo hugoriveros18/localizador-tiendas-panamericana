@@ -37,7 +37,9 @@ const ListaTiendasCiudadesDesktop = () => {
                   }
                 </h3>
                 <p>Dirección: {tienda.direccion}</p>
-                <p>Teléfono: {numeroTelefonicoFormateado(tienda.PBX)}</p>
+                <p>
+                  Teléfono: {numeroTelefonicoFormateado(tienda.PBX,tienda.indicativoCiudad)}{tienda.lineaDirecta ? ` - ${numeroTelefonicoFormateado(tienda.lineaDirecta,tienda.indicativoCiudad)}` : ''}
+                </p>
                 {horarioLunesSabadoFormateado(tienda.horarioLunesViernes, tienda.horarioSabado)}
                 <div className={`${handles['tiendas-ciudad__informacion-botones']}`}>
                   <a

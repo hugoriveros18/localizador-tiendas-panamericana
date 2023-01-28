@@ -1,0 +1,25 @@
+.localizador__mensaje-error {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  width          : 100%;
+  margin-top     : 35px;
+  padding        : 0 20px;
+}
+
+.localizador__mensaje-error p {
+  font-family: var(--font-lato);
+  font-weight: 700;
+  text-align : center;
+  color      : red;
+}
+
+
+@media screen and (min-width: 1026px){
+  .localizador__mensaje-error {
+    margin: 35px 0px;
+  }
+  .localizador__mensaje-error p {
+    font-size: 20px;
+  }
+}

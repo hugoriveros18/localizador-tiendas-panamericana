@@ -3,18 +3,31 @@ import { Context } from "./ContextoGlobal";
 
 const ciudadesPanamericana = ['Bogotá', 'Soacha' ,'Barranquilla', 'Bucaramanga', 'Cali', 'Cartagena', 'Chía', 'Cúcuta','Ibagué', 'Manizales', 'Medellín', 'Montería', 'Neiva', 'Pereira' , 'Santa Marta', 'Valledupar', 'Villavicencio'];
 
-const numeroTelefonicoFormateado = (numeroTelefono:string | undefined) => {
+const numeroTelefonicoFormateado = (numeroTelefono:string | undefined, indicativoCiudad: string | undefined) => {
   if(numeroTelefono) {
     if(numeroTelefono.includes(' ')) {
         const [pbxOne, pbxTwo] = numeroTelefono.split(' ');
-        const pbxOneFormated = `${pbxOne.slice(0,3)} ${pbxOne.slice(3,5)} ${pbxOne.slice(5)}`;
-        const pbxTwoFormated = `${pbxTwo.slice(0,3)} ${pbxTwo.slice(3,5)} ${pbxTwo.slice(5)}`;
+        const pbxOneFormated = `(${indicativoCiudad}) ${pbxOne.slice(0,3)} ${pbxOne.slice(3,5)} ${pbxOne.slice(5)}`;
+        const pbxTwoFormated = `(${indicativoCiudad}) ${pbxTwo.slice(0,3)} ${pbxTwo.slice(3,5)} ${pbxTwo.slice(5)}`;
         const finalPbxNumberFormated = `${pbxOneFormated} - ${pbxTwoFormated}`;
         return finalPbxNumberFormated;
 
     }
     const telefonoFormateado = `${numeroTelefono.slice(0,3)} ${numeroTelefono.slice(3,5)} ${numeroTelefono.slice(5)}`;
-    return telefonoFormateado;
+    return `(${indicativoCiudad}) ${telefonoFormateado}`;
+  }
+  return
+}
+
+const numeroTelefonicoBogotaFormateado = (numeroTelefono:string | undefined, indicativoCiudad: string | undefined) => {
+  if(numeroTelefono) {
+    if(numeroTelefono.includes(' ')) {
+        const [pbxOne, pbxTwo] = numeroTelefono.split(' ');
+        const finalPbxNumberFormated = `(${indicativoCiudad}) ${pbxOne} - (${indicativoCiudad}) ${pbxTwo}`;
+        return finalPbxNumberFormated;
+
+    }
+    return `(${indicativoCiudad}) ${numeroTelefono}`;
   }
   return
 }
@@ -63,7 +76,7 @@ const horarioFormateado = () => {
 }
 
 const horarioLunesSabadoFormateado = (horarioLunesViernes:string, horarioSabado:string) => {
-  
+
   const horarioLunesViernesFormateado = horarioLunesViernes.replace(" ", "").split("-") || 'Por definir';
   const horariosabadoFormateado = horarioSabado.replace(" ", "").split("-") || 'Por definir';
 
@@ -83,4 +96,4 @@ const horarioLunesSabadoFormateado = (horarioLunesViernes:string, horarioSabado:
   }
 }
 
-export { ciudadesPanamericana, numeroTelefonicoFormateado, horarioFormateado, horarioLunesSabadoFormateado }
+export { ciudadesPanamericana, numeroTelefonicoFormateado, numeroTelefonicoBogotaFormateado, horarioFormateado, horarioLunesSabadoFormateado }

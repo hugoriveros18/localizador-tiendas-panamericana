@@ -10,6 +10,7 @@ const ContextoGlobal = ({children}:ContextoGlobalProps) => {
   const [listaTiendas, setListaTiendas] = useState<TiendaSeleccionada[]>([]);
   const [tiendaSeleccionada, setTiendaSeleccionada] = useState<TiendaSeleccionada | null>(null);
   const [verTodasLasTiendasMobile, setVerTodasLasTiendasMobile] = useState<TiendaSeleccionada[] | null>(null);
+  const [fetchError, setFetchError] = useState<boolean>(false);
 
   //JSX
   return(
@@ -19,10 +20,12 @@ const ContextoGlobal = ({children}:ContextoGlobalProps) => {
               listaTiendas: listaTiendas,
               tiendaSeleccionada: tiendaSeleccionada,
               verTodasLasTiendasMobile: verTodasLasTiendasMobile,
+              fetchError: fetchError,
               setCiudadSeleccionada: setCiudadSeleccionada,
               setListaTiendas: setListaTiendas,
               setTiendaSeleccionada: setTiendaSeleccionada,
-              setVerTodasLasTiendasMobile: setVerTodasLasTiendasMobile
+              setVerTodasLasTiendasMobile: setVerTodasLasTiendasMobile,
+              setFetchError: setFetchError
           }}
       >
           {children}

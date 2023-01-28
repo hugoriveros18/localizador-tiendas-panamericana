@@ -13,6 +13,7 @@ type TiendaSeleccionada = {
     horarioLunesViernes: string
     horarioSabado: string
     horarioDomingoFestivo: string | null
+    indicativoCiudad: string
     PBX: string
     lineaDirecta: string | null
     domicilios: string | null
@@ -28,10 +29,12 @@ type LocalizadorTiendasProps = {
     listaTiendas: TiendaSeleccionada[]
     tiendaSeleccionada: TiendaSeleccionada | null
     verTodasLasTiendasMobile: TiendaSeleccionada[] | null
+    fetchError: boolean
     setTiendaSeleccionada: React.Dispatch<React.SetStateAction<TiendaSeleccionada | null>>
     setListaTiendas: React.Dispatch<React.SetStateAction<TiendaSeleccionada[]>>
     setCiudadSeleccionada: React.Dispatch<React.SetStateAction<string>>
     setVerTodasLasTiendasMobile: React.Dispatch<React.SetStateAction<TiendaSeleccionada[] | null>>
+    setFetchError: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export { ContextoGlobalProps, LocalizadorTiendasProps, TiendaSeleccionada, UbicacionTiendaBogotaProps }

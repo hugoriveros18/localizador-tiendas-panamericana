@@ -67,7 +67,8 @@ const CSS_HANDLES = [
   "selector-ciudades",
   "selector-down-arrow",
   "tiendas-seleccionadas__ver-todas",
-  "tienda-seleccionada__close-button"
+  "tienda-seleccionada__close-button",
+  "localizador__mensaje-error"
 ]
 
 export { CSS_HANDLES }
