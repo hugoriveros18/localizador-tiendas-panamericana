@@ -5,7 +5,7 @@ import GoogleMapsLogo from '../../assets/google-maps-logo.png';
 import { TiendaSeleccionada } from "../types";
 import './styles.css';
 import { CSS_HANDLES } from "../cssHandles";
-import { horarioLunesSabadoFormateado, numeroTelefonicoFormateado } from "../informacionGeneralLanding";
+import { horarioCiudadesFormateado, numeroTelefonicoFormateado } from "../informacionGeneralLanding";
 
 const ListaTiendasCiudadesDesktop = () => {
 
@@ -40,7 +40,7 @@ const ListaTiendasCiudadesDesktop = () => {
                 <p>
                   Teléfono: {numeroTelefonicoFormateado(tienda.PBX,tienda.indicativoCiudad)}{tienda.lineaDirecta ? ` - ${numeroTelefonicoFormateado(tienda.lineaDirecta,tienda.indicativoCiudad)}` : ''}
                 </p>
-                {horarioLunesSabadoFormateado(tienda.horarioLunesViernes, tienda.horarioSabado)}
+                {horarioCiudadesFormateado(tienda.horarioLunesViernes, tienda.horarioSabado, tienda.horarioDomingoFestivo)}
                 <div className={`${handles['tiendas-ciudad__informacion-botones']}`}>
                   <a
                     href={`${tienda.linkGoogleMaps}`}
