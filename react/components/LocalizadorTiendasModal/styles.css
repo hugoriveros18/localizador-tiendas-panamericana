@@ -1,0 +1,174 @@
+/* GENERAL */
+
+.modal__localizador-tiendas--app-contenerdor {
+  width: 100%;
+  padding: 0 30px;
+}
+
+.modal__localizador-tiendas--selectores-contenedor {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.selector-modal_contenedor-general {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+
+.selector-modal__tienda,
+.selector-modal__ciudades {
+  position: relative;
+  width: 100%;
+  padding: 10px 15px;
+  font-family: 'Lato', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #9B9B9B;
+  background: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  z-index: 20;
+}
+
+.selector-modal__tienda:focus-visible,
+.selector-modal__ciudades:focus-visible {
+  outline: none;
+}
+
+
+.selector-modal__down-arrow {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  width: 15%;
+  height: 100%;
+  padding: 13px 5px;
+  z-index: 19;
+}
+
+
+
+/* TIENDA SELECCIONADA */
+.tienda-seleccionada-modal__contenedor-general {
+  box-sizing: border-box;
+  width     : 100%;
+}
+
+.tiendas-seleccionadas__ver-todas {
+  display: block;
+}
+
+.tienda-seleccionada-modal__titulo-contenedor {
+  width: 100%;
+}
+
+.tienda-seleccionada-modal__titulo-contenedor h2 {
+  width         : 100%;
+  margin        : 20px 0px;
+  font-family   : 'Lato', sans-serif;
+  font-size     : 28px;
+  font-weight   : 900;
+  text-align    : center;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  color         : #E96611;
+}
+
+.tienda-seleccionada-modal__informacion-general {
+  width         : 100%;
+  display       : flex;
+  flex-direction: column;
+}
+
+.tienda-seleccionada-modal__informacion-general--imagen {
+  box-sizing: border-box;
+  width     : 100%;
+}
+
+.tienda-seleccionada-modal__informacion-general--imagen img {
+  width     : 100%;
+  max-height: 100%;
+}
+
+.tienda-seleccionada-modal__detalles-generales {
+  display       : flex;
+  flex-direction: column;
+  gap           : 15px;
+  margin        : 5px 0px 30px;
+}
+
+.tienda-seleccionada-modal__detalles-generales--geolocalizacion {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  gap            : 2px;
+  padding        : 0px 50px;
+}
+
+.detalles-generales-modal__geolocalizacion--app {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  width          : 50%;
+  max-width      : 144px;
+  min-height     : 28px;
+  max-height     : 30px;
+  padding        : 5px;
+  border         : solid 1px black;
+}
+
+.detalles-generales-modal__geolocalizacion--app img {
+  width: 90%;
+}
+
+.tienda-seleccionada-modal__detalles-generales--datos {
+  box-sizing    : border-box;
+  display       : flex;
+  flex-direction: column;
+  gap           : 5px;
+}
+
+.tienda-seleccionada-modal__detalles-generales--datos p {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+  font-size  : 14px;
+  color      : #686868;
+}
+
+.tienda-seleccionada-modal__ver-mas--contenedor-externo {
+  width  : 100%;
+  display: flex;
+}
+
+.tienda-seleccionada-modal__ver-mas--contenedor-interno {
+  width          : 100%;
+  display        : flex;
+  justify-content: center;
+}
+
+.tienda-seleccionada-modal__ver-mas--boton {
+  font-family     : 'Lato', sans-serif;
+  font-size       : 16px;
+  border          : none;
+  background-color: transparent;
+  color           : #FE4C03;
+}
+
+.tienda-seleccionada-modal__close-button {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .modal__localizador-tiendas--app-contenerdor {
+    padding: 0;
+  }
+}
+

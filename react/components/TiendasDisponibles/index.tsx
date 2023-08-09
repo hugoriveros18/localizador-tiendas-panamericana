@@ -3,10 +3,10 @@ import { Context } from '../ContextoGlobal';
 import { useDevice } from 'vtex.device-detector';
 import DownArrow from '../../assets/down-arrow-icon.png';
 import { useCssHandles } from 'vtex.css-handles';
-import './styles.css'
 import ListaTiendasBogotaDesktop from '../ListaTiendasBogotaDesktop';
 import ListaTiendasCiudadesDesktop from '../ListaTiendasCiudadesDesktop';
 import { CSS_HANDLES } from '../cssHandles';
+import './styles.css'
 
 const TiendasDisponibles = () => {
 

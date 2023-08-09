@@ -2,5 +2,9 @@
   "localizador-tiendas": {
     "component": "LocalizadorTiendasPanamericana",
     "render": "client"
+  },
+  "localizador-tiendas-modal": {
+    "component": "LocalizadorTiendasModalPanamericana",
+    "render": "client"
   }
 }
