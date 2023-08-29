@@ -26,7 +26,7 @@ export default function CiudadesDisponiblesModal() {
             headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/vnd.vtex.ds.v10+json",
-                "REST-Range": "resources=0-20"
+                "REST-Range": "resources=0-30"
             }
         }
       )
