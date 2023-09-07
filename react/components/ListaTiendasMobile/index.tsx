@@ -5,7 +5,7 @@ import WazeLogo from '../../assets/waze-logo.png';
 import { useCssHandles } from 'vtex.css-handles';
 import { CSS_HANDLES } from "../cssHandles";
 import '../TiendaSeleccionada/styles.css';
-import { horarioFormateado, numeroTelefonicoFormateado } from "../informacionGeneralLanding";
+import { horarioCiudadesFormateado, numeroTelefonicoFormateado } from "../informacionGeneralLanding";
 
 const ListaTiendasMobile = () => {
 
@@ -35,6 +35,15 @@ const ListaTiendasMobile = () => {
               key={index}
             >
               <div className={`${handles['tienda-seleccionada__titulo-contenedor']}`}>
+                {
+                  tienda.flagActivo
+                  ?
+                    <div className={`${handles['tiendaSeleccionada__flagContainer']}`}>
+                      <p className={`${handles['tiendaSeleccionada__flag']}`}>{tienda.textoFlag}</p>
+                    </div>
+                  :
+                    null
+                }
                 <h2>{tienda.nombre}</h2>
               </div>
 
@@ -65,7 +74,7 @@ const ListaTiendasMobile = () => {
                   <div className={`${handles['tienda-seleccionada__detalles-generales--datos']}`}>
                     <p>Dirección: {tienda.direccion}</p>
                     <p>Teléfono: {numeroTelefonicoFormateado(tienda.PBX,tienda.indicativoCiudad)}{tienda.lineaDirecta ? ` - ${numeroTelefonicoFormateado(tienda.lineaDirecta,tienda.indicativoCiudad)}` : ''}</p>
-                    {horarioFormateado()}
+                    {horarioCiudadesFormateado(tienda.horarioLunesViernes, tienda.horarioSabado, tienda.horarioDomingoFestivo)}
                     <p>Parqueadero: {tienda.parqueadero ? 'Sí' : 'No'}</p>
                     {
                       tienda.domicilios !== null &&

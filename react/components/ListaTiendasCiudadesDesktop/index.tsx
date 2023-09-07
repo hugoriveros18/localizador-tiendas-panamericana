@@ -3,9 +3,9 @@ import { Context } from "../ContextoGlobal";
 import { useCssHandles } from 'vtex.css-handles';
 import GoogleMapsLogo from '../../assets/google-maps-logo.png';
 import { TiendaSeleccionada } from "../types";
-import './styles.css';
 import { CSS_HANDLES } from "../cssHandles";
 import { horarioCiudadesFormateado, numeroTelefonicoFormateado } from "../informacionGeneralLanding";
+import './styles.css';
 
 const ListaTiendasCiudadesDesktop = () => {
 
@@ -29,13 +29,22 @@ const ListaTiendasCiudadesDesktop = () => {
           return (
             <div key={index} className={`${handles['tiendas-ciudad__informacion-general--contenedor']}`}>
               <div className={`${handles['tiendas-ciudad__informacion-general']}`}>
-                <h3>
+                <div className={`${handles['tiendas-ciudad__titulo-contenerdor']}`}>
                   {
-                    tienda.nombre.toLowerCase().includes('centro comercial')
-                      ? tienda.nombre.toLowerCase().replace('centro comercial', 'C.C.')
-                      : tienda.nombre
+                    tienda.flagActivo
+                    ?
+                      <p className={`${handles['tiendaCiudadDesktop__flag']}`}>{tienda.textoFlag}</p>
+                    :
+                      null
                   }
-                </h3>
+                  <h3>
+                    {
+                      tienda.nombre.toLowerCase().includes('centro comercial')
+                      ? tienda.nombre.toLowerCase().replace('centro comercial', 'C.C.')
+                        : tienda.nombre
+                    }
+                  </h3>
+                </div>
                 <p>Dirección: {tienda.direccion}</p>
                 <p>
                   Teléfono: {numeroTelefonicoFormateado(tienda.PBX,tienda.indicativoCiudad)}{tienda.lineaDirecta ? ` - ${numeroTelefonicoFormateado(tienda.lineaDirecta,tienda.indicativoCiudad)}` : ''}

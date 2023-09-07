@@ -5,11 +5,11 @@ import GoogleMapsLogo from '../../assets/google-maps-logo.png';
 import WazeLogo from '../../assets/waze-logo.png';
 import { useCssHandles } from 'vtex.css-handles';
 import { useDevice } from 'vtex.device-detector';
-import './styles.css';
 import { CSS_HANDLES } from "../cssHandles";
 import { TiendaSeleccionada } from "../types";
 import { horarioFormateado, numeroTelefonicoFormateado } from "../informacionGeneralLanding";
 import CloseButton from '../../assets/close-icon.svg';
+import './styles.css';
 
 
 const TiendaSeleccionada = () => {
@@ -51,6 +51,15 @@ const TiendaSeleccionada = () => {
               <img alt="Close button" src={CloseButton}/>
             </div>
             <div className={`${handles['tienda-seleccionada__titulo-contenedor']}`}>
+                {
+                  estadoGlobal?.tiendaSeleccionada?.flagActivo && isMobile
+                  ?
+                    <div className={`${handles['tiendaSeleccionada__flagContainer']}`}>
+                      <p className={`${handles['tiendaSeleccionada__flag']}`}>{estadoGlobal.tiendaSeleccionada.textoFlag}</p>
+                    </div>
+                  :
+                    null
+                }
                 <h2>{estadoGlobal?.tiendaSeleccionada?.nombre}</h2>
             </div>
 

@@ -8,6 +8,7 @@
   position          : relative;
   width             : 100%;
   padding           : 15px;
+  padding-right: 45px;
   font-family       : var(--font-lato);
   font-size         : 18px;
   color             : var(--text-color-mobile);
@@ -21,15 +22,16 @@
 
 .selector-down-arrow {
   box-sizing     : border-box;
-  position       : absolute;
-  top            : 0;
-  right          : 0;
-  display        : flex;
-  justify-content: center;
-  width          : 25%;
-  height         : 100%;
-  padding        : 16px 5px;
-  z-index        : 10;
+    position       : absolute;
+    display        : flex;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    padding: 0;
+    z-index        : 10;
 }
 
 /* DESKTOP-TABLET */
@@ -43,8 +45,7 @@
 
 .desktop__lista-tiendas--header {
   width        : 100%;
-  height       : 15%;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .desktop__lista-tiendas--header-titulo {
@@ -74,7 +75,7 @@
 
 @media screen and (min-width: 425px) {
   .selector-tienda {
-    padding  : 15px 30px;
+    padding  : 15px 45px 15px 30px;
     font-size: 18px;
   }
 }

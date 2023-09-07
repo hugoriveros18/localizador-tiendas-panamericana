@@ -128,12 +128,13 @@
     left            : 50%;
     transform       : translate(-50%, -50%);
     width           : 65%;
-    height          : 65%;
+    height          : 22px;
     font-family     : var(--font-lato);
     font-size       : 12px;
     font-weight     : 700;
     color           : #ffffff;
-    border          : var(--table-line-border);
+    border          : none;
+    border-radius: 2px;
     background-color: var(--panamericana-color);
     cursor          : pointer;
 }

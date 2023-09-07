@@ -68,7 +68,12 @@ const CSS_HANDLES = [
   "selector-down-arrow",
   "tiendas-seleccionadas__ver-todas",
   "tienda-seleccionada__close-button",
-  "localizador__mensaje-error"
+  "localizador__mensaje-error",
+  "tiendaCiudadDesktop__flag",
+  "tiendas-ciudad__titulo-contenerdor",
+  "tiendasNuevasBogota__container",
+  "tiendaSeleccionada__flagContainer",
+  "tiendaSeleccionada__flag"
 ]
 
 export { CSS_HANDLES }

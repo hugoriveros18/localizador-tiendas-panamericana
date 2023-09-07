@@ -22,6 +22,8 @@ type TiendaSeleccionada = {
     linkGoogleMaps: string
     linkWaze: string
     ubicacionGeografica: string
+    flagActivo: boolean
+    textoFlag: string
 }
 
 type LocalizadorTiendasProps = {

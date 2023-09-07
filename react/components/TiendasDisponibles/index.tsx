@@ -23,9 +23,10 @@ const TiendasDisponibles = () => {
   const seleccionarNuevaTienda = (e:any) => {
       if(e.target.value === '') {
           estadoGlobal?.setTiendaSeleccionada(null);
+          estadoGlobal?.setVerTodasLasTiendasMobile(null);
           return;
       }
-      const tiendaSeleccionada = estadoGlobal?.listaTiendas.find((tienda) => tienda.nombre === e.target.value);
+      const tiendaSeleccionada = estadoGlobal?.listaTiendas.find((tienda) => tienda.direccion === e.target.value);
       if(tiendaSeleccionada !== undefined) {
           estadoGlobal?.setTiendaSeleccionada(tiendaSeleccionada)
       }
@@ -42,9 +43,9 @@ const TiendasDisponibles = () => {
                   -Seleccione una tienda-
               </option>
               {
-                  estadoGlobal?.listaTiendas?.map((tienda,index) => {
+                  estadoGlobal?.listaTiendas?.map((tienda, index) => {
                       return (
-                          <option key={index} value={tienda.nombre}>
+                          <option key={index} value={tienda.direccion}>
                               {
                                 tienda.nombre.includes('Centro Comercial')
                                 ? tienda.nombre.replace('Centro Comercial', 'C.C.')

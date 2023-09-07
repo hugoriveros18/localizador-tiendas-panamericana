@@ -1,4 +1,25 @@
 .desktop__tiendas-bogota--contenedor-general {
-    height: 85%;
     overflow: auto;
 }
+
+.desktop__tiendas-bogota--contenedor-general::-webkit-scrollbar {
+  width           : 2px;
+  background-color: #eee;
+}
+
+.desktop__tiendas-bogota--contenedor-general::-webkit-scrollbar-thumb {
+  width           : 2px;
+  background-color: #565656;
+}
+
+.tiendasNuevasBogota__container {
+  padding: 0px 50px;
+  margin-bottom: 36px;
+}
+
+@media screen and (max-width: 1440px) {
+  .tiendasNuevasBogota__container {
+    padding: 0;
+  }
+}
+

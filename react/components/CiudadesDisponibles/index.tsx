@@ -6,6 +6,7 @@ import { useDevice } from 'vtex.device-detector';
 import DownArrow from '../../assets/down-arrow-icon.png';
 import './styles.css';
 import { CSS_HANDLES } from "../cssHandles";
+import { TiendaSeleccionada } from "../types";
 
 const CiudadesDisponibles = () => {
 
@@ -22,7 +23,7 @@ const CiudadesDisponibles = () => {
   useEffect(() => {
     if(estadoGlobal?.ciudadSeleccionada !== '') {
       fetch(
-        `/api/dataentities/LP/search?_fields=ciudad,nombre,direccion,horarioLunesViernes,horarioSabado,horarioDomingoFestivo,indicativoCiudad,PBX,lineaDirecta,domicilios,parqueadero,imagenTienda,linkGoogleMaps,linkWaze,ubicacionGeografica&_where=ciudad=${estadoGlobal?.ciudadSeleccionada.replace(" ","")}`,
+        `/api/dataentities/LP/search?_fields=ciudad,nombre,direccion,horarioLunesViernes,horarioSabado,horarioDomingoFestivo,indicativoCiudad,PBX,lineaDirecta,domicilios,parqueadero,imagenTienda,linkGoogleMaps,linkWaze,ubicacionGeografica,flagActivo,textoFlag&_where=ciudad=${estadoGlobal?.ciudadSeleccionada.replace(" ","")}`,
         {
             headers: {
                 "Content-Type": "application/json",
@@ -37,7 +38,24 @@ const CiudadesDisponibles = () => {
         }
         throw new Error()
       })
-      .then((res) => {
+      .then((res:TiendaSeleccionada[]) => {
+        res.sort((tienda1:TiendaSeleccionada,tienda2:TiendaSeleccionada) => {
+          if(tienda1.nombre < tienda2.nombre) {
+            return -1;
+          }
+
+          if(tienda1.nombre > tienda2.nombre) {
+            return 1;
+          }
+
+          return 0;
+        })
+        res.forEach((tienda, index) => {
+          if(tienda.flagActivo) {
+            res.splice(index, 1);
+            res.unshift(tienda);
+          }
+        })
         estadoGlobal?.setListaTiendas(res);
       })
       .catch(() => {

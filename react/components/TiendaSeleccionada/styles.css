@@ -44,6 +44,8 @@
 }
 
 .tienda-seleccionada__titulo-contenedor {
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -144,6 +146,23 @@
   display: none;
 }
 
+.tiendaSeleccionada__flagContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tiendaSeleccionada__flag {
+  margin: 0;
+  padding: 8px;
+  font-size: 12px;
+  font-weight: 900;
+  color: #fff;
+  background-color: #ec6608;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
 @media screen and (min-width: 425px) {
   .tienda-seleccionada__informacion-general--imagen {
     box-sizing: border-box;
@@ -202,16 +221,16 @@
 
   .tienda-seleccionada__titulo-contenedor h2 {
     margin     : 55px 0px 5px;
-    font-size  : 47px;
+    font-size  : 38px;
     font-weight: 900;
     color      : var(--panamericana-color);
   }
 
   .tienda-seleccionada__detalles-generales {
-    width          : 45%;
+    width          : 50%;
     flex-direction : column-reverse;
     justify-content: flex-end;
-    gap            : 35px;
+    gap            : 25px;
     margin         : 0px;
   }
 
@@ -224,9 +243,9 @@
   }
 
   .tienda-seleccionada__detalles-generales--geolocalizacion {
-    max-width      : 65%;
+    max-width      : 50%;
     justify-content: flex-start;
-    gap            : 2px;
+    gap            : 10px;
     padding        : 0px;
   }
 
@@ -252,10 +271,11 @@
   .detalles-generales__geolocalizacion--app {
     box-sizing: border-box;
     max-width : none;
-    height    : auto;
-    max-height: 50px;
-    padding   : 17px;
+    height    : 100%;
+    max-height: none;
+    padding   : 5px;
     cursor    : pointer;
+    border-radius: 4px;
   }
 
   .detalles-generales__geolocalizacion--app:hover {
@@ -279,13 +299,15 @@
     box-sizing    : border-box;
     flex-direction: row-reverse;
     max-height    : 500px;
+    gap: 15px;
     padding       : 40px 20px 20px;
   }
 
   .tienda-seleccionada__informacion-general--imagen {
-    width    : 55%;
+    display: flex;
+    width    : 50%;
     max-width: none;
-    padding  : 0px 20px;
+    padding  : 0;
   }
 
   .tienda-seleccionada__close-button {
@@ -322,16 +344,25 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .tienda-seleccionada__contenedor-general {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
   .tienda-seleccionada__informacion-general {
     padding: 40px 40px 12px;
     ;
   }
 
   .tienda-seleccionada__detalles-generales--datos p {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .tienda-seleccionada__ver-mas--contenedor-externo {
     padding-right: 60px;
+  }
+
+  .tienda-seleccionada__detalles-generales--geolocalizacion {
+    max-width      : 300px;
   }
 }

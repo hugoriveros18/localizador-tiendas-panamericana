@@ -38,7 +38,7 @@ const horarioFormateado = () => {
   const estadoGlobal = useContext(Context);
 
   const horarioLunesViernes = estadoGlobal?.tiendaSeleccionada?.horarioLunesViernes.replace(" ","").split("-") || 'Por definir';
-  const horariosabado = estadoGlobal?.tiendaSeleccionada?.horarioSabado.replace(" ","").split("-") || 'Por definir';
+  const horariosabado = estadoGlobal?.tiendaSeleccionada?.horarioSabado?.replace(" ","").split("-");
   const horarioDomingoFestivo = estadoGlobal?.tiendaSeleccionada?.horarioDomingoFestivo?.replace(" ","").split("-");
   if(estadoGlobal?.tiendaSeleccionada?.horarioLunesViernes === estadoGlobal?.tiendaSeleccionada?.horarioSabado) {
     if(horarioDomingoFestivo) {
@@ -56,29 +56,48 @@ const horarioFormateado = () => {
       </>
     )
   } else {
-    if(horarioDomingoFestivo) {
+    if(horariosabado) {
+      if(horarioDomingoFestivo) {
+        return(
+          <>
+            <p>Horario: Lun. - Vier. {`${horarioLunesViernes[0]} a.m. - ${+horarioLunesViernes[1].slice(0,3) - 12}${horarioLunesViernes[1].slice(3)} p.m.`}</p>
+            <p>Sáb. {`${horariosabado[0]} a.m. - ${+horariosabado[1].slice(0,3) - 12}${horariosabado[1].slice(3)} p.m.`}</p>
+            <p>Dom. - Fest. {`${horarioDomingoFestivo[0]} a.m. - ${+horarioDomingoFestivo[1].slice(0,3) - 12}${horarioDomingoFestivo[1].slice(3)} p.m.`}</p>
+          </>
+        )
+      }
       return(
         <>
           <p>Horario: Lun. - Vier. {`${horarioLunesViernes[0]} a.m. - ${+horarioLunesViernes[1].slice(0,3) - 12}${horarioLunesViernes[1].slice(3)} p.m.`}</p>
           <p>Sáb. {`${horariosabado[0]} a.m. - ${+horariosabado[1].slice(0,3) - 12}${horariosabado[1].slice(3)} p.m.`}</p>
-          <p>Dom. - Fest. {`${horarioDomingoFestivo[0]} a.m. - ${+horarioDomingoFestivo[1].slice(0,3) - 12}${horarioDomingoFestivo[1].slice(3)} p.m.`}</p>
+          <p>Dom. - Fest. No abre</p>
+        </>
+      )
+    } else {
+      if(horarioDomingoFestivo) {
+        return(
+          <>
+            <p>Horario: Lun. - Vier. {`${horarioLunesViernes[0]} a.m. - ${+horarioLunesViernes[1].slice(0,3) - 12}${horarioLunesViernes[1].slice(3)} p.m.`}</p>
+            <p>Sáb. No abre</p>
+            <p>Dom. - Fest. {`${horarioDomingoFestivo[0]} a.m. - ${+horarioDomingoFestivo[1].slice(0,3) - 12}${horarioDomingoFestivo[1].slice(3)} p.m.`}</p>
+          </>
+        )
+      }
+      return(
+        <>
+          <p>Horario: Lun. - Vier. {`${horarioLunesViernes[0]} a.m. - ${+horarioLunesViernes[1].slice(0,3) - 12}${horarioLunesViernes[1].slice(3)} p.m.`}</p>
+          <p>Sáb. No abre</p>
+          <p>Dom. - Fest. No abre</p>
         </>
       )
     }
-    return(
-      <>
-        <p>Horario: Lun. - Vier. {`${horarioLunesViernes[0]} a.m. - ${+horarioLunesViernes[1].slice(0,3) - 12}${horarioLunesViernes[1].slice(3)} p.m.`}</p>
-        <p>Sáb. {`${horariosabado[0]} a.m. - ${+horariosabado[1].slice(0,3) - 12}${horariosabado[1].slice(3)} p.m.`}</p>
-        <p>Dom. - Fest. No abre</p>
-      </>
-    )
   }
 }
 
 const horarioCiudadesFormateado = (horarioLunesViernes:string, horarioSabado:string, horarioDomingoFestivo:string | null) => {
 
   const horarioLunesViernesFormateado = horarioLunesViernes.replace(" ","").split("-") || 'Por definir';
-  const horariosabadoFormateado = horarioSabado.replace(" ","").split("-") || 'Por definir';
+  const horariosabadoFormateado = horarioSabado?.replace(" ","").split("-");
   const horarioDomingoFestivoFormateado = horarioDomingoFestivo?.replace(" ","").split("-");
 
   if(horarioLunesViernesFormateado === horariosabadoFormateado) {
@@ -97,22 +116,41 @@ const horarioCiudadesFormateado = (horarioLunesViernes:string, horarioSabado:str
       </>
     )
   } else {
-    if(horarioDomingoFestivoFormateado) {
+    if(horariosabadoFormateado) {
+      if(horarioDomingoFestivoFormateado) {
+        return(
+          <>
+            <p>Horario: Lun. - Vier. {`${horarioLunesViernesFormateado[0]} a.m. - ${+horarioLunesViernesFormateado[1].slice(0,3) - 12}${horarioLunesViernesFormateado[1].slice(3)} p.m.`}</p>
+            <p>Sáb. {`${horariosabadoFormateado[0]} a.m. - ${+horariosabadoFormateado[1].slice(0,3) - 12}${horariosabadoFormateado[1].slice(3)} p.m.`}</p>
+            <p>Dom. - Fest. {`${horarioDomingoFestivoFormateado[0]} a.m. - ${+horarioDomingoFestivoFormateado[1].slice(0,3) - 12}${horarioDomingoFestivoFormateado[1].slice(3)} p.m.`}</p>
+          </>
+        )
+      }
       return(
         <>
           <p>Horario: Lun. - Vier. {`${horarioLunesViernesFormateado[0]} a.m. - ${+horarioLunesViernesFormateado[1].slice(0,3) - 12}${horarioLunesViernesFormateado[1].slice(3)} p.m.`}</p>
           <p>Sáb. {`${horariosabadoFormateado[0]} a.m. - ${+horariosabadoFormateado[1].slice(0,3) - 12}${horariosabadoFormateado[1].slice(3)} p.m.`}</p>
-          <p>Dom. - Fest. {`${horarioDomingoFestivoFormateado[0]} a.m. - ${+horarioDomingoFestivoFormateado[1].slice(0,3) - 12}${horarioDomingoFestivoFormateado[1].slice(3)} p.m.`}</p>
+          <p>Dom. - Fest. No abre</p>
+        </>
+      )
+    } else {
+      if(horarioDomingoFestivoFormateado) {
+        return(
+          <>
+            <p>Horario: Lun. - Vier. {`${horarioLunesViernesFormateado[0]} a.m. - ${+horarioLunesViernesFormateado[1].slice(0,3) - 12}${horarioLunesViernesFormateado[1].slice(3)} p.m.`}</p>
+            <p>Sáb. No abre</p>
+            <p>Dom. - Fest. {`${horarioDomingoFestivoFormateado[0]} a.m. - ${+horarioDomingoFestivoFormateado[1].slice(0,3) - 12}${horarioDomingoFestivoFormateado[1].slice(3)} p.m.`}</p>
+          </>
+        )
+      }
+      return(
+        <>
+          <p>Horario: Lun. - Vier. {`${horarioLunesViernesFormateado[0]} a.m. - ${+horarioLunesViernesFormateado[1].slice(0,3) - 12}${horarioLunesViernesFormateado[1].slice(3)} p.m.`}</p>
+          <p>Sáb. No abre</p>
+          <p>Dom. - Fest. No abre</p>
         </>
       )
     }
-    return(
-      <>
-        <p>Horario: Lun. - Vier. {`${horarioLunesViernesFormateado[0]} a.m. - ${+horarioLunesViernesFormateado[1].slice(0,3) - 12}${horarioLunesViernesFormateado[1].slice(3)} p.m.`}</p>
-        <p>Sáb. {`${horariosabadoFormateado[0]} a.m. - ${+horariosabadoFormateado[1].slice(0,3) - 12}${horariosabadoFormateado[1].slice(3)} p.m.`}</p>
-        <p>Dom. - Fest. No abre</p>
-      </>
-    )
   }
 }
 

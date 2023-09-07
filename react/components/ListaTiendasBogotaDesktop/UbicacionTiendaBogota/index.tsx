@@ -18,14 +18,14 @@ const UbicacionTiendaBogota = ({ubicacionTienda}:UbicacionTiendaBogotaProps) => 
     const handles = useCssHandles(CSS_HANDLES);
 
     //ESTADOS
-    const [listaAbierta, setListaAbierta] = useState<boolean>(ubicacionTienda === "Norte");
+    const [listaAbierta, setListaAbierta] = useState<boolean>(true);
     const [tiendasUbicacion, setTiendasUbicacion] = useState<TiendaSeleccionada[]>([]);
 
     //EFECTOS
     useEffect(() => {
         if(estadoGlobal?.ciudadSeleccionada === 'Bogotá') {
             if( ubicacionTienda !== "Ver Todas") {
-                const tiendasUbicacionFiltradas = estadoGlobal?.listaTiendas?.filter(tienda => tienda.ubicacionGeografica === ubicacionTienda)
+                const tiendasUbicacionFiltradas = estadoGlobal?.listaTiendas?.filter(tienda => tienda.ubicacionGeografica === ubicacionTienda);
                 setTiendasUbicacion(tiendasUbicacionFiltradas);
             } else {
                 setTiendasUbicacion(estadoGlobal.listaTiendas);
