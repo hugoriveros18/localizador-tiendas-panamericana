@@ -18,10 +18,10 @@ const ListaTiendasBogotaDesktop = () => {
   return(
       <div className={`${handles['desktop__tiendas-bogota--contenedor-general']}`}>
           <TiendaBogotaNueva/>
+          <UbicacionTiendaBogota ubicacionTienda="Ver Todas"/>
           <UbicacionTiendaBogota ubicacionTienda="Norte"/>
           <UbicacionTiendaBogota ubicacionTienda="Sur"/>
           <UbicacionTiendaBogota ubicacionTienda="Occidente"/>
-          <UbicacionTiendaBogota ubicacionTienda="Ver Todas"/>
       </div>
   )
 }

@@ -18,7 +18,7 @@ const UbicacionTiendaBogota = ({ubicacionTienda}:UbicacionTiendaBogotaProps) => 
     const handles = useCssHandles(CSS_HANDLES);
 
     //ESTADOS
-    const [listaAbierta, setListaAbierta] = useState<boolean>(true);
+    const [listaAbierta, setListaAbierta] = useState<boolean>(ubicacionTienda === 'Ver Todas');
     const [tiendasUbicacion, setTiendasUbicacion] = useState<TiendaSeleccionada[]>([]);
 
     //EFECTOS
